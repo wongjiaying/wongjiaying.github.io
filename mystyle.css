@@ -1,0 +1,135 @@
+
+     header {
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        background-color: #EAE7DC;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+        }
+    
+        .words {
+        color:  #EAE7DC;
+        font-size: 0;
+        line-height: 1.5;
+        }
+    
+        .words span {
+        font-size: 5rem;
+        display: inline-block;
+        animation: move 3s ease-in-out infinite;
+        }
+    
+        @keyframes move {
+        0% {
+            transform: translate(-30%, 0);
+        }
+        50% {
+            text-shadow: 0 25px 50px rgb(0, 0, 0);
+        }
+        100% {
+            transform: translate(30%, 0);
+        }
+        }
+    
+        .words span:nth-child(2) {
+        animation-delay: 0.5s;
+        }
+    
+        .words span:nth-child(3) {
+        animation-delay: 1s;
+        }
+    
+        .words span:nth-child(4) {
+        animation-delay: 1.5s;
+        }
+    
+        .words span:nth-child(5) {
+        animation-delay: 2s;
+        }
+    
+        .words span:nth-child(6) {
+        animation-delay: 2.5s;
+        }
+    
+        .words span:nth-child(7) {
+        animation-delay: 3s;
+        }
+    
+        html{scroll-behavior:smooth}
+    
+        .button.play {
+            box-sizing: border-box;
+            width: 30px;
+            height: 30px;
+            margin-left:10px;
+            /* border-style: solid; */
+            border-width: 15px 0px 15px 30px;
+            border-color: transparent transparent transparent #E85A4F;
+            background-color: #EAE7DC;
+        }
+        .frame{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            height: 60px;
+            width: 60px;
+            position: relative;
+            box-shadow:
+            -7px -7px 20px 0px #fff9,
+            -4px -4px 5px 0px #fff9,
+            7px 7px 20px 0px #0002,
+            4px 4px 5px 0px #0001,
+            inset 0px 0px 0px 0px #fff9,
+            inset 0px 0px 0px 0px #0001,
+            inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
+            transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+            border-radius: 10px;
+        }
+        #profile, #persistence, #feedback{
+            background-color: #D8C3A5;
+        }
+        .flex-container {
+            display: flex;
+        }
+    
+        .flex-child {
+            flex: 1;
+            /* border: 2px solid yellow; */
+        }  
+    
+        /* .flex-child:first-child {
+            margin-right: 20px;
+        }  */
+        #fall, #resourceful {
+            background-color: #EAE7DC;
+        }
+        #cp {
+            background-image: url(sky-cloud-daily-illustration-with-cartoon-cirrus-cumulus-white-clouds-rays-sun-illustration_1284-62767.jpeg);
+            height:500px;
+            width:500px;
+            border: #8D8E8A 1px solid;
+            margin: 20px;
+        }
+        #circle, #resources, #form {
+            height:500px;
+            width:500px;
+            border: #8D8E8A 1px solid;
+            margin: 20px;
+        }
+        #circle {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow:hidden;
+        }
+        #follow {
+            position: relative;
+            /* height: 50px;
+            width: 50px; */
+            box-sizing: border-box;
+            transition: 0.1s;
+            transform: translate(-50%,-50%);
+        } 
