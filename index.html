@@ -1,33 +1,275 @@
-<h1> Hello </h1>
-<form>
-  <table border="1">
-    <tr><td colspan="2"><img src="photo.png"></td></tr>
-    <tr><td rowspam="2">Self Introduction:</td><td>hello hello hello</td></tr>
-    <tr></tr>
-    <tr><td>Name:</td><td><input type="name" name="name" value="default"/></td></tr>
-    <tr><td>Relationship Status:</td>
-    <td>
-      <input name="Relationship" type="radio" value="s">Single
-      <input name="Relationship" type="radio" value="m">Married
-      <input name="Relationship" type="radio" value="c">Complicated
-    </td></tr>
-    <tr><td>Favourite Fruits:</td><td>
-      <input name="colours[]" type="checkbox" value="m">Mango
-      <input name="colours[]" type="checkbox" value="p">Pineapple
-      <input name="colours[]" type="checkbox" value="w">Watermelon
-      <input name="colours[]" type="checkbox" value="g">Grape
-      <input name="colours[]" type="checkbox" value="o">Orange
-    </td></tr>
-    <tr><td>School:</td><td>
-      <select name="school">
-        <option value="soe">soe</option>
-        <option value="sol">sol</option>
-        <option value="scis">scis</option>
-        <option value="soss">soss</option>
-        <option value="soa">soa</option>
-        <option value="sob">sob</option>
-      </select>
-    </td></tr>
-    <tr><td colspan="2"><input type="submit" name="submit" value="SUBMIT"></td></tr>
-  </table>
-</form>
+<h lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> 
+      header {
+      font-family: Verdana, Geneva, Tahoma, sans-serif;
+      background-color: #EAE7DC;
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      justify-content: center;
+      align-items: center;
+      }
+  
+      .words {
+      color:  #EAE7DC;
+      font-size: 0;
+      line-height: 1.5;
+      }
+  
+      .words span {
+      font-size: 5rem;
+      display: inline-block;
+      animation: move 3s ease-in-out infinite;
+      }
+  
+      @keyframes move {
+      0% {
+          transform: translate(-30%, 0);
+      }
+      50% {
+          text-shadow: 0 25px 50px rgb(0, 0, 0);
+      }
+      100% {
+          transform: translate(30%, 0);
+      }
+      }
+  
+      .words span:nth-child(2) {
+      animation-delay: 0.5s;
+      }
+  
+      .words span:nth-child(3) {
+      animation-delay: 1s;
+      }
+  
+      .words span:nth-child(4) {
+      animation-delay: 1.5s;
+      }
+  
+      .words span:nth-child(5) {
+      animation-delay: 2s;
+      }
+  
+      .words span:nth-child(6) {
+      animation-delay: 2.5s;
+      }
+  
+      .words span:nth-child(7) {
+      animation-delay: 3s;
+      }
+  
+      html{scroll-behavior:smooth}
+  
+      .button.play {
+          box-sizing: border-box;
+          width: 30px;
+          height: 30px;
+          margin-left:10px;
+          /* border-style: solid; */
+          border-width: 15px 0px 15px 30px;
+          border-color: transparent transparent transparent #E85A4F;
+          background-color: #EAE7DC;
+      }
+      .frame{
+          display: flex;
+          flex-direction: row;
+          justify-content: space-around;
+          align-items: center;
+          height: 60px;
+          width: 60px;
+          position: relative;
+          box-shadow:
+          -7px -7px 20px 0px #fff9,
+          -4px -4px 5px 0px #fff9,
+          7px 7px 20px 0px #0002,
+          4px 4px 5px 0px #0001,
+          inset 0px 0px 0px 0px #fff9,
+          inset 0px 0px 0px 0px #0001,
+          inset 0px 0px 0px 0px #fff9,        inset 0px 0px 0px 0px #0001;
+          transition:box-shadow 0.6s cubic-bezier(.79,.21,.06,.81);
+          border-radius: 10px;
+      }
+      #profile, #persistence, #feedback{
+          background-color: #D8C3A5;
+      }
+      .flex-container {
+          display: flex;
+      }
+  
+      .flex-child {
+          flex: 1;
+          /* border: 2px solid yellow; */
+      }  
+  
+      /* .flex-child:first-child {
+          margin-right: 20px;
+      }  */
+      #fall, #resourceful {
+          background-color: #EAE7DC;
+      }
+      #cp {
+          background-image: url(sky.png);
+          height:500px;
+          width:500px;
+          border: #8D8E8A 1px solid;
+          margin: 20px;
+      }
+      #circle, #resources, #form {
+          height:500px;
+          width:500px;
+          border: #8D8E8A 1px solid;
+          margin: 20px;
+      }
+      #circle {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          overflow:hidden;
+      }
+      #follow {
+          position: absolute;
+          border-radius: 50%;
+          border: black 2px solid;
+          height: 30px;
+          width: 30px;
+          box-sizing: border-box;
+          transition: 0.1s;
+          transform: translate(-50%,-50%);
+      } 
+    </style>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  </head>
+  <body>
+      <header>
+          <!-- WELCOME -->
+          <div class="words">
+              <span>W</span>
+              <span>E</span>
+              <span>L</span>
+              <span>C</span>
+              <span>O</span>
+              <span>M</span>
+              <span>E</span>
+          </div>
+          <br/>
+          <!-- Red play button -->
+          <div class="frame">
+              <a href="#profile"><button class='button play'></button></a>
+          </div>
+      </header>
+  
+      <div class="flex-container" id="profile">
+          <!-- Photo -->
+          <div class="flex-child">
+              <img src="photo.png" alt="Avatar" style="border-radius: 50%; width: 600px; height: 600px; ; object-fit:cover ;padding:100px ; ">
+          </div>
+          <div class="flex-child mt-5 pt-5 text-white rounded" style="padding-right: 10px;">
+              <div id="introduction" class="mt-5">
+                  <h1 style="font-size: 60px;">hello, <br/>i'm jia ying!</h1>
+                  <p>i study economics and information systems</p>
+                  <p>i didn't make that welcome but it looks very cool :)</p>
+                  <p>coding is hard but <a href="#fall">[CLICK ME]</a></p>
+              </div>
+          </div>
+      </div>
+      <!-- Positive -->
+      <div class="flex-container" id="fall">
+          <div class="flex-child mx-5">
+              <h1 style="font-size: 100px; color:#8D8E8A">i'm a positive thinker</h1>
+              <p style="font-style:italic; font-family: cursive; text-align: right;">" i lied i'm really not, but i can pretend to be "</p>
+              <div style="text-align: center;"><button style="text-align: center;" onclick="wish()">rain positivity</button></div>
+          </div>
+          <div class="flex-child" id="cp" style="overflow:hidden">
+          </div>
+      </div>
+      <!-- Persistence -->
+      <div class="flex-container" id="persistence">
+          <div class="flex-child" style="background-color:transparent;" id="circle">
+              <div class="follow" id="follow"></div>
+          </div>
+          <div class="flex-child">
+              <h1 style="font-size: 100px; color:#8D8E8A; text-align: right; padding-right: 20px;">i'm persistent</h1>
+              <p style="font-style:italic; font-family: cursive; text-align: left;">" the universe always fall in love with a stubborn heart "</p>
+          </div>
+      </div>
+      <!-- Resourceful -->
+      <div class="flex-container" id="resourceful">
+          <div class="flex-child mx-5">
+              <h1 style="font-size: 100px; color:#8D8E8A">i'm resourceful</h1>
+              <p style="font-style:italic; font-family: cursive; text-align: right;">" it's not about your resources, it's about your resourcefulness "</p>
+          </div>
+          <div class="flex-child" id="resources" style="background-color:black; color:white; text-align: center; overflow:hidden;" >
+              <marquee width="80%" direction="up" height="500px" scrollamount="20">
+                  Credits to: <br/>
+                  w3schools.com <br/>
+                  stackoverflow <br/>
+                  developer.mozilla.org<br/>
+                  google <br/>
+                  csslayout <br/>
+                  codepen <br/>
+                  coders on youtube <br/>
+                  prof kyong <br/>
+                  my brain <br/>
+                  electricity for existing<br/>
+              </marquee>
+          </div>
+      </div>
+      <!-- Feedback -->
+      <div class="flex-container" id="Feedback" >
+          <div class="flex-child" id="form" style="background-color:#Abb9A2">
+              <form  style="padding: 20px;">
+                  <h1 style="text-align: center;" >if you have any feedback, please hesistate to contact me</h1>
+                  <div class="mb-3">
+                      <label for="disabledSelect" class="form-label">do you like my page?</label>
+                      <select id="disabledSelect" class="form-select">
+                          <option>yes</option>
+                          <option disabled>no</option>
+                      </select>
+                  </div>
+                  <div class="mb-3">
+                      <label for="exampleInputEmail1" class="form-label">additional comments?</label>
+                      <input type="email" class="form-control" id="exampleInputEmail1">
+                      <div id="emailHelp" class="form-text">your feedback will not be reaching me because i didn't code that in</div>
+                  </div>
+                  <button type="button" class="btn" onclick="location.href='//www.youtube.com/watch?v=dQw4w9WgXcQ'" style="color: black; background-color: #E85A4F;">submit</button>
+                  <div id="emailHelp" class="form-text">you get a small gift if you click this button</div>
+              </form>
+          </div>
+          <div class="flex-child">
+              <h1 style="font-size: 100px; color:#8D8E8A; text-align: right; padding-right: 20px;">i'm open to growth</h1>
+              <p style="font-style:italic; font-family: cursive; text-align: left;">" we all need people who wil give us feedback. that's how we improve "</p>
+          </div>
+      </div>
+    <script>
+      // var circle = document.getElementById("drawcircle");
+      //     document.body.addEventListener("mousemove", function(e) {
+      //     circle.style.left = e.clientX + "px",
+      //     circle.style.top = e.clientY + "px";
+      // });
+      var follow = document.getElementById("follow");
+      document.body.addEventListener("mousemove", function(e) {
+          var x = e.clientX
+          var y = e.clientY
+          follow.style.left = x + 'px';
+          follow.style.top = y + 'px';
+      });
+      function getRandomIntInclusive(min, max) {
+          min = Math.ceil(min);
+          max = Math.floor(max);
+          return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+      }
+      function wish() {
+          var division = document.getElementById("cp");
+          var num = getRandomIntInclusive(100,500)
+          var num2 = getRandomIntInclusive(10,350)
+          division.innerHTML += `<marquee style="z-index:2;position:absolute;left:inherit; padding-left:${num2};top:inherit;font-family:Cursive;font-size:14pt;color:yellow;height:${num}px;" scrollamount="10" direction="down">positivity</marquee>`
+      }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+  </body>
+  </html>
